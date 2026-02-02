@@ -1,8 +1,6 @@
 package org.jurasciix.quicknotes
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 
-class MainViewModel(application: Application) : AndroidViewModel(application) {
-    private val noteDao = App.noteDatabase(application).dao()
+class MainViewModel : ViewModel() {
 }
