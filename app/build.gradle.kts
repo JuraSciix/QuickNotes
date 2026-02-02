@@ -49,4 +49,8 @@ dependencies {
     // Persistence over SQLite
     implementation(libs.room.runtime)
     ksp(libs.room.compiler)
+
+    // Lifecycle
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
 }
