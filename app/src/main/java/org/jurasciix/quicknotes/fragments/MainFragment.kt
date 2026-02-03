@@ -9,17 +9,21 @@ import org.jurasciix.quicknotes.R
 import org.jurasciix.quicknotes.animateClick
 import org.jurasciix.quicknotes.databinding.FragmentMainBinding
 
-class PagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+enum class Tabs(val resId: Int) {
+    PENDING(R.string.tab_pending),
+    COMPLETED(R.string.tab_completed)
+}
+
+class TabAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun createFragment(position: Int): Fragment {
-        return when (position) {
-            0 -> NoteListFragment()
-            1 -> NoteListFragment()
-            else -> throw IllegalArgumentException("Position: $position")
+        return when (Tabs.entries[position]) {
+            Tabs.PENDING -> NoteListFragment()
+            Tabs.COMPLETED -> NoteListFragment()
         }
     }
 
     override fun getItemCount(): Int {
-        return 2
+        return Tabs.entries.size
     }
 }
 
@@ -30,14 +34,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentMainBinding.bind(view).apply {
-            pager.adapter = PagerAdapter(this@MainFragment)
+            pager.adapter = TabAdapter(this@MainFragment)
 
             val mediator = TabLayoutMediator(tabs, pager) { tab, position ->
-                tab.setText(when (position) {
-                    0 -> R.string.tab_pending
-                    1 -> R.string.tab_completed
-                    else -> throw IllegalArgumentException("Position: $position")
-                })
+                tab.setText(Tabs.entries[position].resId)
             }
             mediator.attach()
 
