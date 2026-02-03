@@ -42,7 +42,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             mediator.attach()
 
             add.animateClick {
-                // todo
+                NoteDialogFragment().show(childFragmentManager, null)
             }
         }
     }
