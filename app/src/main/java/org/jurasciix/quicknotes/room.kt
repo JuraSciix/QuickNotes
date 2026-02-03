@@ -13,7 +13,12 @@ import kotlinx.coroutines.flow.Flow
 @Entity
 data class Note(
     @PrimaryKey(autoGenerate = true)
-    val id: Long
+    val id: Long,
+    val title: String,
+    val description: String,
+    val created: Long,
+    val deadline: Long,
+    val completed: Boolean
 )
 
 @Dao

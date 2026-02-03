@@ -2,4 +2,9 @@
     <string name="app_name">QuickNotes</string>
 
     <string name="stuff">Привет!</string>
+    <string name="note_title">Название заметки</string>
+    <string name="note_date">01.01.2026 10:45</string>
+    <string name="en_dash">–</string>
+    <string name="tip_no_notes">Заметок нет</string>
+    <string name="tip_add_notes">Добавьте их с помощью кнопки снизу</string>
 </resources>
