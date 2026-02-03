@@ -8,7 +8,6 @@ import androidx.fragment.app.activityViewModels
 import org.jurasciix.quicknotes.MainViewModel
 import org.jurasciix.quicknotes.NoteAdapter
 import org.jurasciix.quicknotes.R
-import org.jurasciix.quicknotes.animateClick
 import org.jurasciix.quicknotes.databinding.FragmentNoteListBinding
 
 class NoteListFragment : Fragment(R.layout.fragment_note_list) {
@@ -34,10 +33,6 @@ class NoteListFragment : Fragment(R.layout.fragment_note_list) {
         binding = FragmentNoteListBinding.bind(requireView()).apply {
             // todo: ItemDecorator с отступами между элементами
             noteRecycler.adapter = noteAdapter
-
-            add.animateClick {
-                // todo
-            }
         }
 
         // todo: Skeleton?

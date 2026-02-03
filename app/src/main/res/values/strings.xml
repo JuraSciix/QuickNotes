@@ -7,4 +7,6 @@
     <string name="en_dash">–</string>
     <string name="tip_no_notes">Заметок нет</string>
     <string name="tip_add_notes">Добавьте их с помощью кнопки снизу</string>
+    <string name="tab_pending">Ожидающие</string>
+    <string name="tab_completed">Выполненные</string>
 </resources>
