@@ -42,8 +42,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/add"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:insetLeft="0dp"
         android:insetTop="0dp"
         android:insetRight="0dp"
