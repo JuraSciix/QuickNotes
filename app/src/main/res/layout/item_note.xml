@@ -1,64 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_note"
     android:layout_width="match_parent"
-    android:layout_height="70dp">
+    android:layout_height="70dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/complete"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp">
 
-        <TextView
-            android:id="@+id/title"
+        <ImageView
+            android:id="@+id/splash"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_splash"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/splash_default" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:gravity="top|start"
-            android:text="@string/note_title"
-            app:layout_constraintBottom_toTopOf="@id/timeline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/timeline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintEnd_toStartOf="@id/complete"
+            app:layout_constraintStart_toEndOf="@id/splash"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="top|start"
+                android:text="@string/note_title"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/note_date" />
+                android:drawablePadding="4dp"
+                android:includeFontPadding="false"
+                android:text="@string/note_date"
+                app:drawableStartCompat="@drawable/ic_clock"
+                app:drawableTint="@android:color/secondary_text_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/en_dash" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/deadline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/note_date" />
-        </LinearLayout>
-
+        <CheckBox
+            android:id="@+id/complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <CheckBox
-        android:id="@+id/complete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
